@@ -9,7 +9,18 @@ app.get('/api/hello', async (req, res) => {
 
     res.send('Hello World')
 })
+app.get('/api/db', async (req, res) => {
 
+    const str = JSON.stringify(process.env)
+    res.send(str)
+    
+})
+app.get('/api/showkey', async (req, res) => {
+
+    const somekey = process.env.somekey 
+    res.send('somekey: '+somekey)
+   
+    })
 app.get('/api/merhaba', (req, res) => {
 
     res.send('Merhaba Dünya')
